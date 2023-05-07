@@ -1,0 +1,18 @@
+---
+thumbnail: /thumbnails/Donut.png
+title: Blender donut
+date: 2022-05-01
+---
+
+import ModelDisplay from "../../components/ModelDisplay.tsx"
+
+To learn about 3d modelling, I made this donut in Blender, by following Blender Guru's tutorial.
+The sprinkles are made using geometry nodes, without placing each and every one individually.
+
+In the original model, the color of each sprinkle is chosen at random within a set of colors, but when I exported the model, they were all of one color.
+
+You can see the rendered image here:
+![](/thumbnails/Donut.png)
+
+You can also see the 3d model here:
+<ModelDisplay client:only="react" model_path="/models/Donut.glb" environment="sunset" />

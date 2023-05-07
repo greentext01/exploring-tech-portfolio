@@ -1,0 +1,27 @@
+---
+import HeaderGradient from "./HeaderGradient.astro";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <div class="p-5">
+    <HeaderGradient>
+      <a href="/">
+        <h1 class="lg:text-2xl md:text-4xl text-2xl hover:underline">
+          Olivier's Portfolio
+        </h1>
+      </a>
+    </HeaderGradient>
+  </div>
+
+  <div
+    class="max-w-4xl mx-auto prose prose-emerald dark:prose-invert mt-20 prose-lg prose-p:text-xl mb-40 prose-p:text-justify"
+  >
+    <div class="mx-5">
+      <h1>{frontmatter.title}</h1>
+      <slot />
+    </div>
+  </div>
+</Layout>

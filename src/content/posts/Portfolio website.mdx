@@ -1,0 +1,33 @@
+---
+thumbnail: /thumbnails/Portfolio.png
+title: Portfolio website
+date: 2023-05-01
+---
+
+import ModelDisplay from "../../components/ModelDisplay.tsx"
+
+For the class, we had to make a portfolio website. Most people used Google sites to make it, but I decided to code it "from scratch".
+
+To make this easier, I used a relatively new web framework called Astro. This framework is perfect
+for blog-like websites, such as this one, since (without getting into the details) it generates the HTML in advance, 
+instead of "rendering" it from a Javascript package sent to the browser, leading to a faster response time, and less 
+loading after recieving the page (Read more about it here: 
+[Visual Explanation and Comparison of CSR, SSR, SSG and ISR](https://dev.to/pahanperera/visual-explanation-and-comparison-of-csr-ssr-ssg-and-isr-34ea)). 
+The framework also has methods to reuse more code, such as components and templates
+
+Coding a website makes it much faster than using Google Sites, or using any other website maker.
+
+Unlike the home page, the blog posts aren't written in HTML; they are written in MDX. 
+MDX is a variant of Markdown, with support for some more advanced features (such as the 3D viewer, explained later).
+
+Markdown is like HTML; they both describe the contents of a website. HTML has tags, and looks more visually crowded, unless if you are used to it.
+Markdown, on the other hand, looks simpler, with more intuitive syntax.
+
+I also made the 3d viewer using code, and used libraries like Three.js to show the model.
+
+To add the 3d viewer to a post, Markdown, since it is simple by design, has no clean way of doing this.
+This is where MDX comes in. It enables me to add regular HTML (among other things), and embed a custom-made 3d viewer into the post.
+
+Here's a demo of the 3d viewer, showing Blender's Suzanne
+
+<ModelDisplay client:only="react" model_path="/models/Metal_monkey.glb" environment="sunset" />
