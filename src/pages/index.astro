@@ -1,11 +1,11 @@
 ---
-import { Canvas } from "@react-three/fiber";
 import Card from "../components/Card.astro";
-import ModelDisplay from "../components/ModelDisplay";
 import HeaderGradient from "../layouts/HeaderGradient.astro";
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-const posts = await getCollection("posts");
+const posts = await getCollection("posts").then((posts) =>
+  posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+);
 ---
 
 <Layout title="Home">
